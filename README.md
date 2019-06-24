@@ -6,7 +6,9 @@ Ryan Frescas, Eric Staveley, Eric Tonian
 
 ## (Potential) Project Goals
 1) Create an ML app with NLP to give users wine recommendations based upon either: flavor profiles, food pairings, or other wines.
+
 (or)
+
 2) Create an ML app with CNN that will analyze the 'look' of a wine label and predict: price, rating, region, type, etc. Bonus: See if it can produce an 'image' of a wine label given a classification (price, rating, etc.).
 
 ## (Potential) Data Sources
