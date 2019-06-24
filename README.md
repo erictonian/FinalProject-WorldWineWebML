@@ -2,7 +2,7 @@
 UTA Data Bootcamp Final Project - Machine Learning with Wine
 
 #### Team Members
-Ryan Frescas, Eric Stavely, Eric Tonian
+Ryan Frescas, Eric Staveley, Eric Tonian
 
 ## (Potential) Project Goals
 1) Create an ML app with NLP to give users wine recommendations based upon either: flavor profiles, food pairings, or other wines.
