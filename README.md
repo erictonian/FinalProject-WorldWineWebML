@@ -1,17 +1,15 @@
 # FinalProject-WorldWineWebML
-UTA Data Bootcamp Final Project - Machine Learning with Wine
+UTA Data Bootcamp Final Project - Machine Learning (with Wine!)
 
 #### Team Members
 Ryan Frescas, Eric Staveley, Eric Tonian
 
-## (Potential) Project Goals
-1) Create an ML app with NLP to give users wine recommendations based upon either: flavor profiles, food pairings, or other wines.
+## Project Goal
+Our goal is to utilize Natural Language Processing (NLP) for Machine Learning in order to predict rating and/or price from the description of the wine. In order to do this we will take the following steps:
+  1) Gather data -- use a combination of existing data from WineEnthusiast and newly scrapped data to create a large enough        dataset to train the model.
+  2) Pre-process data -- clean wine description through removal of punctuation, tokenization, removal of stop words,                stemming/lemmatizing, vectorizing with TF-IDF.
+  3) Model selection -- choose models with best theoretical fit (such as Multinomial Naive Bayes), train, test, compare!
 
-(or)
-
-2) Create an ML app with CNN that will analyze the 'look' of a wine label and predict: price, rating, region, type, etc. Bonus: See if it can produce an 'image' of a wine label given a classification (price, rating, etc.).
-
-## (Potential) Data Sources
-1) Wine Review Dataset- 180k wine reviews with variety, location, winery, price, and description https://www.kaggle.com/zynicide/wine-reviews
-2) Create our own scraper of Vivino.com for wine data including: image, price, rating, region, type, etc..
-https://www.vivino.com
+## Data Source
+1) Wine Review Dataset- 180k+ wine reviews with variety, location, winery, price, and description https://www.kaggle.com/zynicide/wine-reviews
+2) Our own scrapping of the same source to add new reviews to the existing dataset (from https://winemag.com/)
