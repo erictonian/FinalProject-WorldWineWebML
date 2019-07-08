@@ -1,0 +1,544 @@
+
+
+Modelling Run Notes
+*********************
+
+Accuracy summary:
+### Categorical Naive Bayes Accuracy: 0.8246813983397638 
+
+### Categorical Bigram Naive Bayes: Accuracy: 0.7947503799836315 
+
+### Word Count Logistic Regression: Accuracy: 0.8462527768034608 
+
+### TF-IDF Logistic Regression Model: Accuracy: 0.8575353677072373  <<<<<<<< #3
+  only top 20 countries boosted accuracy to:  Accuracy: 0.8621581127530186 
+
+### Normalized Word Count Logistic Regression: Accuracy: 0.8462527768034608 
+
+### Bigram TF-IDF Logistic Regression:  Accuracy: 0.8539985969835145 
+
+###  TF-IDF Logistic Regression with Automatic Corpus Specific Stop Words:  Accuracy: 0.8578861218285981   <<<<<<<  #2
+    only top 20 countries boosted accuracy to:  Accuracy: 0.8619524662886688 
+
+### TF-IDF Linear SVC:  Accuracy: 0.881942008651935     <<<<<   #1
+   only top 20 countries boosted accuracy to:  Accuracy: 0.8863362613472782 
+
+
+
+issues:
+### Linear Regression   --   maybe not approp --  dnf
+### didnt wait--Gaussian Naive Bayes  --  dnf
+### caused reboot-Linear Discrete Analysis
+### warnings--TF-IDF Logistic Lasso  dnf
+### coef do not converge -- TF-IDF Logistic Ridge   dnf
+### error-TF-IDF Logistic Elasticnet   dnf
+
+
+
+
+### Categorical Naive Bayes
+
+warning:
+/Users/Eric/anaconda3/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+
+
+                       precision    recall  f1-score   support
+
+             Argentina       0.70      0.35      0.47       954
+               Armenia       0.00      0.00      0.00         3
+             Australia       0.66      0.52      0.58       610
+               Austria       0.51      0.74      0.60       760
+Bosnia and Herzegovina       0.00      0.00      0.00         2
+                Brazil       0.00      0.00      0.00        12
+              Bulgaria       0.00      0.00      0.00        44
+                Canada       1.00      0.02      0.03        63
+                 Chile       0.62      0.47      0.54       996
+                 China       0.00      0.00      0.00         2
+               Croatia       0.00      0.00      0.00        15
+        Czech Republic       0.00      0.00      0.00         2
+               England       0.00      0.00      0.00        22
+                France       0.82      0.79      0.80      5277
+               Georgia       0.00      0.00      0.00        25
+               Germany       0.54      0.82      0.65       540
+                Greece       0.90      0.17      0.29       110
+               Hungary       0.00      0.00      0.00        40
+                 India       0.00      0.00      0.00         2
+                Israel       0.73      0.20      0.31       123
+                 Italy       0.99      0.88      0.93      6373
+                Kosovo       0.00      0.00      0.00         4
+               Lebanon       0.00      0.00      0.00         7
+            Luxembourg       0.00      0.00      0.00         2
+             Macedonia       0.00      0.00      0.00         4
+                Mexico       0.00      0.00      0.00        19
+               Moldova       0.00      0.00      0.00        25
+               Morocco       0.00      0.00      0.00         4
+           New Zealand       0.79      0.39      0.53       379
+                  Peru       0.00      0.00      0.00         4
+              Portugal       0.85      0.60      0.71      1374
+               Romania       0.00      0.00      0.00        25
+                Serbia       0.00      0.00      0.00         5
+              Slovenia       0.00      0.00      0.00        16
+          South Africa       0.63      0.40      0.49       330
+                 Spain       0.60      0.88      0.71      1708
+           Switzerland       0.00      0.00      0.00         6
+                Turkey       0.00      0.00      0.00        23
+                    US       0.86      0.96      0.91     14258
+               Ukraine       0.00      0.00      0.00         4
+               Uruguay       0.00      0.00      0.00        40
+
+             micro avg       0.82      0.82      0.82     34212
+             macro avg       0.27      0.20      0.21     34212
+          weighted avg       0.82      0.82      0.81     34212
+
+CPU times: user 17.4 s, sys: 340 ms, total: 17.7 s
+Wall time: 13.6 s
+
+****
+
+### didnt wait--Gaussian Naive Bayes
+
+### Categorical Bigram Naive Bayes
+
+Accuracy: 0.7947503799836315 
+
+/Users/Eric/anaconda3/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+                        precision    recall  f1-score   support
+
+             Argentina       0.97      0.08      0.14       954
+               Armenia       0.00      0.00      0.00         3
+             Australia       1.00      0.05      0.09       610
+               Austria       0.94      0.27      0.42       760
+Bosnia and Herzegovina       0.00      0.00      0.00         2
+                Brazil       0.00      0.00      0.00        12
+              Bulgaria       0.00      0.00      0.00        44
+                Canada       0.00      0.00      0.00        63
+                 Chile       0.89      0.20      0.33       996
+                 China       0.00      0.00      0.00         2
+               Croatia       0.00      0.00      0.00        15
+        Czech Republic       0.00      0.00      0.00         2
+               England       0.00      0.00      0.00        22
+                France       0.75      0.90      0.82      5277
+               Georgia       0.00      0.00      0.00        25
+               Germany       0.84      0.39      0.54       540
+                Greece       0.00      0.00      0.00       110
+               Hungary       0.00      0.00      0.00        40
+                 India       0.00      0.00      0.00         2
+                Israel       1.00      0.01      0.02       123
+                 Italy       1.00      0.91      0.95      6373
+                Kosovo       0.00      0.00      0.00         4
+               Lebanon       0.00      0.00      0.00         7
+            Luxembourg       0.00      0.00      0.00         2
+             Macedonia       0.00      0.00      0.00         4
+                Mexico       0.00      0.00      0.00        19
+               Moldova       0.00      0.00      0.00        25
+               Morocco       0.00      0.00      0.00         4
+           New Zealand       1.00      0.02      0.05       379
+                  Peru       0.00      0.00      0.00         4
+              Portugal       1.00      0.23      0.38      1374
+               Romania       0.00      0.00      0.00        25
+                Serbia       0.00      0.00      0.00         5
+              Slovenia       0.00      0.00      0.00        16
+          South Africa       0.00      0.00      0.00       330
+                 Spain       0.55      0.81      0.66      1708
+           Switzerland       0.00      0.00      0.00         6
+                Turkey       0.00      0.00      0.00        23
+                    US       0.77      1.00      0.87     14258
+               Ukraine       0.00      0.00      0.00         4
+               Uruguay       0.00      0.00      0.00        40
+
+             micro avg       0.79      0.79      0.79     34212
+             macro avg       0.26      0.12      0.13     34212
+          weighted avg       0.81      0.79      0.75     34212
+
+CPU times: user 32.3 s, sys: 2.05 s, total: 34.3 s
+Wall time: 29 s
+
+
+### Word Count Logistic Regression
+
+Accuracy: 0.8462527768034608 
+
+                        precision    recall  f1-score   support
+
+             Argentina       0.75      0.39      0.51       954
+               Armenia       0.00      0.00      0.00         3
+             Australia       0.74      0.48      0.59       610
+               Austria       0.80      0.60      0.69       760
+Bosnia and Herzegovina       0.00      0.00      0.00         2
+                Brazil       0.00      0.00      0.00        12
+              Bulgaria       0.71      0.11      0.20        44
+                Canada       0.00      0.00      0.00        63
+                 Chile       0.64      0.52      0.57       996
+                 China       0.00      0.00      0.00         2
+               Croatia       0.00      0.00      0.00        15
+        Czech Republic       0.00      0.00      0.00         2
+               England       0.00      0.00      0.00        22
+                France       0.79      0.88      0.83      5277
+               Georgia       0.00      0.00      0.00        25
+               Germany       0.73      0.62      0.67       540
+                Greece       0.75      0.41      0.53       110
+               Hungary       0.88      0.17      0.29        40
+                 India       0.00      0.00      0.00         2
+                Israel       0.63      0.37      0.47       123
+                 Italy       0.97      0.96      0.97      6373
+                Kosovo       0.00      0.00      0.00         4
+               Lebanon       0.00      0.00      0.00         7
+            Luxembourg       0.00      0.00      0.00         2
+             Macedonia       0.00      0.00      0.00         4
+                Mexico       0.00      0.00      0.00        19
+               Moldova       0.00      0.00      0.00        25
+               Morocco       0.00      0.00      0.00         4
+           New Zealand       0.79      0.36      0.49       379
+                  Peru       0.00      0.00      0.00         4
+              Portugal       0.92      0.45      0.60      1374
+               Romania       0.00      0.00      0.00        25
+                Serbia       0.00      0.00      0.00         5
+              Slovenia       0.00      0.00      0.00        16
+          South Africa       0.65      0.44      0.53       330
+                 Spain       0.68      0.79      0.73      1708
+           Switzerland       0.00      0.00      0.00         6
+                Turkey       0.00      0.00      0.00        23
+                    US       0.86      0.97      0.91     14258
+               Ukraine       0.00      0.00      0.00         4
+               Uruguay       0.83      0.12      0.22        40
+
+             micro avg       0.85      0.85      0.85     34212
+             macro avg       0.32      0.21      0.24     34212
+          weighted avg       0.84      0.85      0.83     34212
+
+CPU times: user 6min 2s, sys: 1.2 s, total: 6min 3s
+Wall time: 1min 39s
+
+
+
+### TF-IDF Logistic Regression Model
+
+Accuracy: 0.8575353677072373 
+
+                        precision    recall  f1-score   support
+
+             Argentina       0.75      0.42      0.54       954
+               Armenia       0.00      0.00      0.00         3
+             Australia       0.78      0.52      0.62       610
+               Austria       0.82      0.64      0.72       760
+Bosnia and Herzegovina       0.00      0.00      0.00         2
+                Brazil       0.00      0.00      0.00        12
+              Bulgaria       0.77      0.23      0.35        44
+                Canada       0.00      0.00      0.00        63
+                 Chile       0.62      0.54      0.58       996
+                 China       0.00      0.00      0.00         2
+               Croatia       0.00      0.00      0.00        15
+        Czech Republic       0.00      0.00      0.00         2
+               England       0.00      0.00      0.00        22
+                France       0.81      0.89      0.84      5277
+               Georgia       1.00      0.04      0.08        25
+               Germany       0.77      0.65      0.70       540
+                Greece       0.78      0.45      0.57       110
+               Hungary       1.00      0.25      0.40        40
+                 India       0.00      0.00      0.00         2
+                Israel       0.61      0.41      0.50       123
+                 Italy       0.98      0.97      0.97      6373
+                Kosovo       0.00      0.00      0.00         4
+               Lebanon       0.00      0.00      0.00         7
+            Luxembourg       0.00      0.00      0.00         2
+             Macedonia       0.00      0.00      0.00         4
+                Mexico       0.00      0.00      0.00        19
+               Moldova       1.00      0.04      0.08        25
+               Morocco       0.00      0.00      0.00         4
+           New Zealand       0.83      0.40      0.54       379
+                  Peru       0.00      0.00      0.00         4
+              Portugal       0.94      0.51      0.66      1374
+               Romania       0.50      0.04      0.07        25
+                Serbia       0.00      0.00      0.00         5
+              Slovenia       1.00      0.06      0.12        16
+          South Africa       0.70      0.47      0.56       330
+                 Spain       0.70      0.78      0.73      1708
+           Switzerland       0.00      0.00      0.00         6
+                Turkey       0.00      0.00      0.00        23
+                    US       0.87      0.98      0.92     14258
+               Ukraine       0.00      0.00      0.00         4
+               Uruguay       0.92      0.30      0.45        40
+
+             micro avg       0.86      0.86      0.86     34212
+             macro avg       0.42      0.23      0.27     34212
+          weighted avg       0.85      0.86      0.85     34212
+
+CPU times: user 5min 38s, sys: 1.19 s, total: 5min 39s
+Wall time: 1min 34s
+
+
+### Normalized Word Count Logistic Regression
+
+Accuracy: 0.8462527768034608 
+
+                        precision    recall  f1-score   support
+
+             Argentina       0.75      0.39      0.51       954
+               Armenia       0.00      0.00      0.00         3
+             Australia       0.74      0.48      0.59       610
+               Austria       0.80      0.60      0.69       760
+Bosnia and Herzegovina       0.00      0.00      0.00         2
+                Brazil       0.00      0.00      0.00        12
+              Bulgaria       0.71      0.11      0.20        44
+                Canada       0.00      0.00      0.00        63
+                 Chile       0.64      0.52      0.57       996
+                 China       0.00      0.00      0.00         2
+               Croatia       0.00      0.00      0.00        15
+        Czech Republic       0.00      0.00      0.00         2
+               England       0.00      0.00      0.00        22
+                France       0.79      0.88      0.83      5277
+               Georgia       0.00      0.00      0.00        25
+               Germany       0.73      0.62      0.67       540
+                Greece       0.75      0.41      0.53       110
+               Hungary       0.88      0.17      0.29        40
+                 India       0.00      0.00      0.00         2
+                Israel       0.63      0.37      0.47       123
+                 Italy       0.97      0.96      0.97      6373
+                Kosovo       0.00      0.00      0.00         4
+               Lebanon       0.00      0.00      0.00         7
+            Luxembourg       0.00      0.00      0.00         2
+             Macedonia       0.00      0.00      0.00         4
+                Mexico       0.00      0.00      0.00        19
+               Moldova       0.00      0.00      0.00        25
+               Morocco       0.00      0.00      0.00         4
+           New Zealand       0.79      0.36      0.49       379
+                  Peru       0.00      0.00      0.00         4
+              Portugal       0.92      0.45      0.60      1374
+               Romania       0.00      0.00      0.00        25
+                Serbia       0.00      0.00      0.00         5
+              Slovenia       0.00      0.00      0.00        16
+          South Africa       0.65      0.44      0.53       330
+                 Spain       0.68      0.79      0.73      1708
+           Switzerland       0.00      0.00      0.00         6
+                Turkey       0.00      0.00      0.00        23
+                    US       0.86      0.97      0.91     14258
+               Ukraine       0.00      0.00      0.00         4
+               Uruguay       0.83      0.12      0.22        40
+
+             micro avg       0.85      0.85      0.85     34212
+             macro avg       0.32      0.21      0.24     34212
+          weighted avg       0.84      0.85      0.83     34212
+
+CPU times: user 6min 14s, sys: 1.27 s, total: 6min 15s
+Wall time: 1min 43s
+
+
+
+
+### Bigram TF-IDF Logistic Regression
+
+Accuracy: 0.8539985969835145 
+
+                        precision    recall  f1-score   support
+
+             Argentina       0.82      0.38      0.51       954
+               Armenia       0.00      0.00      0.00         3
+             Australia       0.82      0.44      0.58       610
+               Austria       0.86      0.59      0.70       760
+Bosnia and Herzegovina       0.00      0.00      0.00         2
+                Brazil       0.00      0.00      0.00        12
+              Bulgaria       0.75      0.07      0.12        44
+                Canada       0.00      0.00      0.00        63
+                 Chile       0.68      0.52      0.59       996
+                 China       0.00      0.00      0.00         2
+               Croatia       0.00      0.00      0.00        15
+        Czech Republic       0.00      0.00      0.00         2
+               England       0.00      0.00      0.00        22
+                France       0.80      0.90      0.85      5277
+               Georgia       0.00      0.00      0.00        25
+               Germany       0.78      0.62      0.69       540
+                Greece       0.71      0.23      0.34       110
+               Hungary       1.00      0.05      0.10        40
+                 India       0.00      0.00      0.00         2
+                Israel       0.68      0.37      0.48       123
+                 Italy       0.98      0.97      0.97      6373
+                Kosovo       0.00      0.00      0.00         4
+               Lebanon       0.00      0.00      0.00         7
+            Luxembourg       0.00      0.00      0.00         2
+             Macedonia       0.00      0.00      0.00         4
+                Mexico       0.00      0.00      0.00        19
+               Moldova       0.00      0.00      0.00        25
+               Morocco       0.00      0.00      0.00         4
+           New Zealand       0.87      0.32      0.46       379
+                  Peru       0.00      0.00      0.00         4
+              Portugal       0.94      0.46      0.61      1374
+               Romania       0.00      0.00      0.00        25
+                Serbia       0.00      0.00      0.00         5
+              Slovenia       0.00      0.00      0.00        16
+          South Africa       0.71      0.37      0.48       330
+                 Spain       0.66      0.82      0.73      1708
+           Switzerland       0.00      0.00      0.00         6
+                Turkey       0.00      0.00      0.00        23
+                    US       0.86      0.98      0.92     14258
+               Ukraine       0.00      0.00      0.00         4
+               Uruguay       0.00      0.00      0.00        40
+
+             micro avg       0.85      0.85      0.85     34212
+             macro avg       0.31      0.20      0.22     34212
+          weighted avg       0.85      0.85      0.84     34212
+
+CPU times: user 13min 52s, sys: 3.49 s, total: 13min 55s
+Wall time: 3min 48s
+
+
+
+###  TF-IDF Logistic Regression with Automatic Corpus Specific Stop Words
+
+/Users/Eric/anaconda3/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:433: FutureWarning: Default solver will be changed to 'lbfgs' in 0.22. Specify a solver to silence this warning.
+  FutureWarning)
+/Users/Eric/anaconda3/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:460: FutureWarning: Default multi_class will be changed to 'auto' in 0.22. Specify the multi_class option to silence this warning.
+  "this warning.", FutureWarning)
+Accuracy: 0.8578861218285981 
+
+                        precision    recall  f1-score   support
+
+             Argentina       0.75      0.42      0.54       954
+               Armenia       0.00      0.00      0.00         3
+             Australia       0.78      0.53      0.63       610
+               Austria       0.82      0.64      0.72       760
+Bosnia and Herzegovina       0.00      0.00      0.00         2
+                Brazil       0.00      0.00      0.00        12
+              Bulgaria       0.77      0.23      0.35        44
+                Canada       0.00      0.00      0.00        63
+                 Chile       0.63      0.54      0.58       996
+                 China       0.00      0.00      0.00         2
+               Croatia       0.00      0.00      0.00        15
+        Czech Republic       0.00      0.00      0.00         2
+               England       0.00      0.00      0.00        22
+                France       0.81      0.89      0.84      5277
+               Georgia       1.00      0.04      0.08        25
+               Germany       0.77      0.65      0.71       540
+                Greece       0.80      0.46      0.59       110
+               Hungary       1.00      0.28      0.43        40
+                 India       0.00      0.00      0.00         2
+                Israel       0.61      0.41      0.50       123
+                 Italy       0.98      0.96      0.97      6373
+                Kosovo       0.00      0.00      0.00         4
+               Lebanon       0.00      0.00      0.00         7
+            Luxembourg       0.00      0.00      0.00         2
+             Macedonia       0.00      0.00      0.00         4
+                Mexico       0.00      0.00      0.00        19
+               Moldova       1.00      0.04      0.08        25
+               Morocco       0.00      0.00      0.00         4
+           New Zealand       0.84      0.41      0.55       379
+                  Peru       0.00      0.00      0.00         4
+              Portugal       0.94      0.51      0.66      1374
+               Romania       0.50      0.04      0.07        25
+                Serbia       0.00      0.00      0.00         5
+              Slovenia       1.00      0.06      0.12        16
+          South Africa       0.68      0.48      0.56       330
+                 Spain       0.69      0.78      0.73      1708
+           Switzerland       0.00      0.00      0.00         6
+                Turkey       0.00      0.00      0.00        23
+                    US       0.87      0.98      0.92     14258
+               Ukraine       0.00      0.00      0.00         4
+               Uruguay       0.92      0.30      0.45        40
+
+             micro avg       0.86      0.86      0.86     34212
+             macro avg       0.42      0.24      0.27     34212
+          weighted avg       0.85      0.86      0.85     34212
+
+CPU times: user 5min 50s, sys: 1.88 s, total: 5min 52s
+Wall time: 1min 38s
+
+
+### caused reboot-Linear Discrete Analysis
+
+
+### TF-IDF Linear SVC
+
+Accuracy: 0.881942008651935 
+
+/Users/Eric/anaconda3/lib/python3.7/site-packages/sklearn/metrics/classification.py:1143: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+                        precision    recall  f1-score   support
+
+             Argentina       0.65      0.51      0.57       954
+               Armenia       1.00      0.67      0.80         3
+             Australia       0.80      0.66      0.72       610
+               Austria       0.81      0.73      0.77       760
+Bosnia and Herzegovina       0.00      0.00      0.00         2
+                Brazil       1.00      0.08      0.15        12
+              Bulgaria       0.83      0.57      0.68        44
+                Canada       0.67      0.13      0.21        63
+                 Chile       0.58      0.58      0.58       996
+                 China       1.00      1.00      1.00         2
+               Croatia       1.00      0.27      0.42        15
+        Czech Republic       0.00      0.00      0.00         2
+               England       0.79      0.50      0.61        22
+                France       0.83      0.90      0.86      5277
+               Georgia       1.00      0.36      0.53        25
+               Germany       0.79      0.76      0.78       540
+                Greece       0.88      0.70      0.78       110
+               Hungary       0.96      0.68      0.79        40
+                 India       1.00      0.50      0.67         2
+                Israel       0.71      0.55      0.62       123
+                 Italy       0.98      0.98      0.98      6373
+                Kosovo       1.00      0.25      0.40         4
+               Lebanon       1.00      0.43      0.60         7
+            Luxembourg       0.00      0.00      0.00         2
+             Macedonia       0.50      0.25      0.33         4
+                Mexico       1.00      0.05      0.10        19
+               Moldova       0.85      0.44      0.58        25
+               Morocco       1.00      0.50      0.67         4
+           New Zealand       0.84      0.62      0.71       379
+                  Peru       0.00      0.00      0.00         4
+              Portugal       0.90      0.60      0.72      1374
+               Romania       0.63      0.48      0.55        25
+                Serbia       1.00      0.60      0.75         5
+              Slovenia       0.88      0.44      0.58        16
+          South Africa       0.72      0.65      0.68       330
+                 Spain       0.72      0.77      0.75      1708
+           Switzerland       1.00      0.17      0.29         6
+                Turkey       0.67      0.26      0.38        23
+                    US       0.92      0.97      0.95     14258
+               Ukraine       0.00      0.00      0.00         4
+               Uruguay       0.85      0.57      0.69        40
+
+             micro avg       0.88      0.88      0.88     34212
+             macro avg       0.75      0.47      0.54     34212
+          weighted avg       0.88      0.88      0.88     34212
+
+CPU times: user 1min 31s, sys: 1min 13s, total: 2min 45s
+Wall time: 2min 35s
+
+
+### warnings--TF-IDF Logistic Lasso
+
+/Users/Eric/anaconda3/lib/python3.7/site-packages/sklearn/linear_model/sag.py:334: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+  "the coef_ did not converge", ConvergenceWarning)
+
+***
+### TF-IDF Logistic Ridge
+
+hangs:
+/Users/Eric/anaconda3/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:460: FutureWarning: Default multi_class will be changed to 'auto' in 0.22. Specify the multi_class option to silence this warning.
+  "this warning.", FutureWarning)
+/Users/Eric/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_split.py:2053: FutureWarning: You should specify a value for 'cv' instead of relying on the default value. The default value will change from 3 to 5 in version 0.22.
+  warnings.warn(CV_WARNING, FutureWarning)
+/Users/Eric/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_split.py:652: Warning: The least populated class in y has only 1 members, which is too few. The minimum number of members in any class cannot be less than n_splits=3.
+  % (min_groups, self.n_splits)), Warning)
+/Users/Eric/anaconda3/lib/python3.7/site-packages/sklearn/linear_model/sag.py:334: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+  "the coef_ did not converge", ConvergenceWarning)
+  
+fans ramp up and down with the .fit running....but no results after the above warning
+stopped after ~15min
+****
+
+### TF-IDF Logistic Elasticnet
+
+error:"
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<timed exec> in <module>
+
+TypeError: __init__() got an unexpected keyword argument 'l1_ratios'
+
+​
+
+
+
+
+
