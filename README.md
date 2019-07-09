@@ -17,11 +17,11 @@ Our goal is to utilize Natural Language Processing (NLP) for Machine Learning in
   3) Model selection -- choose models with best theoretical fit (such as Multinomial Naive Bayes), train, test, compare!
 
 ## Presentation
-Intro - Us, Topic, Goal *Eric T*
-Data - Source, Scrape (ETL) *Ryan*
-Desc. Analysis - Description, Sentiment, word2vec *Ryan*
-ML Models - Price/Points, Variety, Country; how we decided to filter data, what methods did we need to use, why did we pick               this/these models *Eric&Eric*
-Conclusion- what we found (is it useful?), what can we build off of this, what we learned *All*
+Intro - Us, Topic, Goal *Eric T* 
+Data - Source, Scrape (ETL) *Ryan* 
+Desc. Analysis - Description, Sentiment, word2vec *Ryan* 
+ML Models - Price/Points, Variety, Country; how we decided to filter data, what methods did we need to use, why did we pick               this/these models *Eric&Eric* 
+Conclusion- what we found (is it useful?), what can we build off of this, what we learned *All* 
 
 ## Data Source
 1) Wine Review Dataset- 180k+ wine reviews with variety, location, winery, price, and description https://www.kaggle.com/zynicide/wine-reviews
