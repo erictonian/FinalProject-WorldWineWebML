@@ -9,7 +9,6 @@ UTA Data Bootcamp Final Project - Machine Learning (with Wine!)
 
 
 #### Team Members
----
 Ryan Frescas, Eric Staveley, Eric Tonian
 
 ## Project Goal
@@ -27,12 +26,15 @@ Conclusion- what we found (is it useful?), what can we build off of this, what w
 
 ## Data Source
 1) Wine Review Dataset- 180k+ wine reviews with variety, location, winery, price, and description https://www.kaggle.com/zynicide/wine-reviews
-2) Our own scrapping of the same source to add new reviews to the existing dataset (from https://winemag.com/)
+2) Our own scrapping of the same source: https://winemag.com/
 
 ## ETL Process
 
 ## Text Analysis
 
 ## ML Models
+#### Regression Analysis - Price and Points
+
+#### Classification Analysis - Varietal and Country
 
 ## Conclusion
