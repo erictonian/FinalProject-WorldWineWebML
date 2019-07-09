@@ -73,6 +73,8 @@ These results tell us that the wine description can potentially give us useful p
 #### Classification Analysis - Varietal
 
 ![nbresults](images/naive_bayes.png)
+![tfidflogresults](images/tfidf_logistic_regression.png)
+![tfidfscvresults](images/tfidf_svc.png)
 
 #### Classification Analysis - Country
 
