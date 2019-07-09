@@ -1,6 +1,9 @@
 # FinalProject-WorldWineWebML
 UTA Data Bootcamp Final Project - Machine Learning (with Wine!)
 
+<center><img src="Images/globe_wine.jpeg" alt="WWW Image" width="300"></center>
+<center>The World Wine Web</center>
+
 #### Team Members
 Ryan Frescas, Eric Staveley, Eric Tonian
 
