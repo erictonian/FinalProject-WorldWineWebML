@@ -1,3 +1,4 @@
+
 # FinalProject-WorldWineWebML
 UTA Data Bootcamp Final Project - Machine Learning (with Wine!)
 
@@ -8,13 +9,14 @@ UTA Data Bootcamp Final Project - Machine Learning (with Wine!)
 
 
 #### Team Members
+---
 Ryan Frescas, Eric Staveley, Eric Tonian
 
 ## Project Goal
-Our goal is to utilize Natural Language Processing (NLP) for Machine Learning in order to predict rating and/or price from the description of the wine. In order to do this we will take the following steps:
-  1) Gather data -- use a combination of existing data from WineEnthusiast and newly scrapped data to create a large enough        dataset to train the model.
-  2) Pre-process data -- clean wine description through removal of punctuation, tokenization, removal of stop words,                stemming/lemmatizing, vectorizing with TF-IDF.
-  3) Model selection -- choose models with best theoretical fit (such as Multinomial Naive Bayes), train, test, compare!
+Our goal is to utilize Natural Language Processing (NLP) for Machine Learning in order to predict a number of dependent variables (price, points, country, varietal) from the description of the wine. In order to do this we will take the following steps:
+  1) ETL -- use a combination of existing data from WineEnthusiast and newly scrapped data to create a large enough dataset to train the model.
+  2) Textual Analysis -- analyze the wine desriptions that will make up our explanatory variable by exploring word counts, performing sentiment analysis, and looking for word associations with word2vec.
+  3) Pre-processing and Model selection -- prepare data through removal of stop words, tokenization, vectorization, over/under sampling. Then choose variety of models for each of our dependent variables with best theoretical fit, train, test, compare!
 
 ## Presentation
 Intro - Us, Topic, Goal *Eric T*  
