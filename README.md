@@ -1,9 +1,6 @@
 # FinalProject-WorldWineWebML
 UTA Data Bootcamp Final Project - Machine Learning (with Wine!)
 
-<center><img src="images/globe_wine.jpeg" alt="WWW Image" width="300"></center>
-<center>The World Wine Web</center>
-
 <p align="center">
   <img width="300" src="images/globe_wine.jpeg" alt="WWW Image"><br>
   The World Wine Web
