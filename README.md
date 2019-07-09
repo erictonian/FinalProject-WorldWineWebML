@@ -72,9 +72,31 @@ These results tell us that the wine description can potentially give us useful p
 
 #### Classification Analysis - Varietal
 
-![nbresults](images/naive_bayes.png)
-![tfidflogresults](images/tfidf_logistic_regression.png)
-![tfidfscvresults](images/tfidf_svc.png)
+Turning to the classification models, variety seems a likely choice as one would expect wines of a certain type to have similar flavor profiles even when considering other factors like price or region. It is important to note that there are a wide range of varieties within the data set but their respective sample sizes are not balanced, which is taken into consideration by limiting the data to the top 20 varietals and also with imblearn's under sampling method, NearMiss.
+<p align="center">
+  <strong>Variety Counts</strong>
+  <img src="images/variety_counts.png" alt="variety counts"><br>
+</p>
+
+The first model is a simple NB model with a matrix of count-vectorized description tokens and the top 20 varietals, which shows that there is some predictive power of the description on variety, with some varieties performing much better than others (ex. Grüner Veltliner vs. Merlot):
+<p align="center">
+  <strong>Naive Bayes Classification Model - Variety</strong>
+  <img width="600" src="images/nb_variety.png" alt="nb variety results"><br>
+</p>
+
+The next model takes into account not only the count of the tokens but also their varying weights using the TF-IDF transformer and by using the logisic method, which is better suited to larger data sets. The results show a strong improvement over the NB model, as seen below:
+<p align="center">
+  <strong>TF-IDF Logistic Classification Model - Variety</strong>
+  <img width="600" src="images/tfidf_log_variety.png" alt="tfidf log variety results"><br>
+</p>
+
+The final model utilizes the linear SCV method, which operates similarly to the SVR method used previously on the continuous variables but is meant for classification problems. As seen below this model seems to perform as well, if not better than the other models.
+<p align="center">
+  <strong>TF-IDF SVC Classification Model - Variety</strong>
+  <img width="600" src="images/tfidf_svc_variety.png" alt="tf idf svc variety results"><br>
+</p>
+
+The variety model results above can lead us to conclude that there may be some predictive power of description on variety but it is not a perfect predictor. The imbalance of the dataset may have a strong role in affecting this predictive power but that is an issue that can only be properly solved with better data. It is interesting to note the various scores of the varietals, as one can see that some are much more easily predicted than others. This can mean that some wine types are very specific in their flavor profiles while some can vary in taste widely, perhaps due to the grapes themselves or other factors like the number of different growing regions for each grape.
 
 #### Classification Analysis - Country
 
