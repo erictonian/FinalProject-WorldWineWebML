@@ -72,6 +72,8 @@ These results tell us that the wine description can potentially give us useful p
 
 #### Classification Analysis - Varietal
 
+![nbresults](images/naive_bayes.png)
+
 #### Classification Analysis - Country
 
 44 countries were representing in the dataset of 171,059 reviews
