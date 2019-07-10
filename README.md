@@ -207,6 +207,3 @@ By developing an application with a front-end choice, where a user could pick a 
   Linear Discrete Analysis (kernel panic !)<br>
   TF-IDF Linear SVC (Accuracy: 0.881942008651935)
 </p>
-
-## Conclusion
-
