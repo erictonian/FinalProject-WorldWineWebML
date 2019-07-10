@@ -157,7 +157,7 @@ The next model takes into account not only the count of the tokens but also thei
   <img width="600" src="images/tfidf_log_variety.png" alt="tfidf log variety results"><br>
 </p>
 
-The final model utilizes the linear SCV method, which operates similarly to the SVR method used previously on the continuous variables but is meant for classification problems. As seen below this model seems to perform as well, if not better than the other models.
+The final model utilizes the linear SVC method, which operates similarly to the SVR method used previously on the continuous variables but is meant for classification problems. As seen below this model seems to perform as well, if not better than the other models.
 <p align="center">
   <strong>TF-IDF SVC Classification Model - Variety</strong>
   <img width="600" src="images/tfidf_svc_variety.png" alt="tf idf svc variety results"><br>
