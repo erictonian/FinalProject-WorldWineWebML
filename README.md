@@ -49,27 +49,26 @@ Visualization of our word count for descriptions:
 
 We can then analyze the most common words within our dataset:
    <p align="center">
-     <strong>Top Unigrams without Stop Words</strong>
-     <img width="600" src="images/unigrams_nostop.png" alt="nb variety results"><br>
+     <strong>Top Unigrams without Stop Words</strong><br>
+     <img width="600" src="images/unigrams_nostop.png" alt="nb variety results">
    </p>
    <p align="center">
-     <strong>Top Bigrams without Stop Words</strong>
-     <img width="600" src="images/top_bigrams_nostop.png" alt="nb variety results"><br>
+     <strong>Top Bigrams without Stop Words</strong><br>
+     <img width="600" src="images/top_bigrams_nostop.png" alt="nb variety results">
    </p>
    <p align="center">
-     <strong>Top Trigrams without Stop Words</strong>
-     <img width="600" src="images/top_trigrams_nostop.png" alt="nb variety results"><br>
+     <strong>Top Trigrams without Stop Words</strong><br>
+     <img width="600" src="images/top_trigrams_nostop.png" alt="nb variety results">
    </p>
 
 Finally, we can find the characteristic terms and the associates of the text:
    <p align="center">
-     <strong>Top 20 words that differentiate between a general English corpus</strong>
-     <img src="images/english_corpus.png" alt="nb variety results"><br>
+     <strong>Top 20 words that differentiate between a general English corpus</strong><br>
+     <img src="images/english_corpus.png" alt="nb variety results">
    </p>
    <p align="center">
-     <strong>Top 15 words for any US or France Wine (for example)</strong>
-     <br>
-     <img img width="200" src="images/us_france_top_words.png" alt="nb variety results"><br>
+     <strong>Top 15 words for any US or France Wine (for example)</strong><br>
+     <img width="500" src="images/us_france_top_words.png" alt="nb variety results">
    </p>
 
 ## Word2Vec
@@ -82,16 +81,16 @@ Finally, we can find the characteristic terms and the associates of the text:
 
 3. Some examples:
    <p align="center">
-     <img src="images/most_similar_full.png" alt="nb variety results"><br>
+     <img width="400" src="images/most_similar_full.png" alt="nb variety results"><br>
    </p>
    <p align="center">
-     <img src="images/most_similar_melon.png" alt="nb variety results"><br>
+     <img width="400" src="images/most_similar_melon.png" alt="nb variety results"><br>
    </p>
    <p align="center">
-     <img src="images/most_similar_oak.png" alt="nb variety results"><br>
+     <img width="400" src="images/most_similar_oak.png" alt="nb variety results"><br>
    </p>
    <p align="center">
-     <img src="images/most_similar_tannins.png" alt="nb variety results"><br>
+     <img width="400" src="images/most_similar_tannins.png" alt="nb variety results"><br>
    </p>
 
 ## ML Models
