@@ -64,7 +64,7 @@ Finally, we can find the characteristic terms and the associates of the text:
 
 - New Packages used: [Gensim word2vec model](https://radimrehurek.com/gensim/models/word2vec.html#gensim.models.word2vec.Word2Vec), [Natural language toolkit (NLTK)](https://www.nltk.org/)
 
-After getting the data parsed correctly we can test multiple varieties of _min_word_count_, _num_features_ or _window(context_size)_. Decided to go with a mid range of _min_word_count = 5_, _num_features = 100_ and _window(context_size) = 10_ for less noise.
+After getting the data parsed correctly we can test multiple varieties of _min_count_, _size_ or _window_. Decided to go with a mid range of _min_count = 5_, _size = 150_ and _window = 5_ for less noise.
 
 Word2Vec has a "most similar" predicting function that will provide words that are similar to what you search.
 Some examples:
@@ -79,6 +79,24 @@ Some examples:
 </p>
 <p align="center">
  <img width="400" src="images/most_similar_tannins.png" alt="nb variety results"><br>
+</p>
+
+We can get most common words from a group of words.
+Example:
+<p align="center">
+ <img width="400" src="images/most_common_group.png" alt="nb variety results"><br>
+</p>
+
+We can compare how common words are (or are not) related.
+Example:
+<p align="center">
+ <img width="400" src="images/words_compare.png" alt="nb variety results"><br>
+</p>
+
+Lastly, it allows us to pick out the least relevant word in a list.
+Example:
+<p align="center">
+ <img width="400" src="images/least_relevant.png" alt="nb variety results"><br>
 </p>
 
 ## ML Models
