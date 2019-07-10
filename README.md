@@ -17,21 +17,11 @@ Our goal is to utilize Natural Language Processing (NLP) for Machine Learning in
   2) Textual Analysis: analyze the wine descriptions that will make up our explanatory variable by exploring word counts, performing sentiment analysis, and looking for word associations with word2vec.
   3) Pre-processing and Model selection: prepare data through removal of stop words, tokenization, vectorization, over/under sampling. Then choose variety of models for each of our dependent variables with best theoretical fit, train, test, compare!
 
-## Presentation
-Intro - Us, Topic, Goal *Eric T*  
-Data - Source, Scrape (ETL) *Ryan*  
-Desc. Analysis - Description, Sentiment, word2vec *Ryan*   
-ML Models - Price/Points, Variety, Country; how we decided to filter data, what methods did we need to use, why did we pick               this/these models *Eric&Eric*   
-Conclusion- what we found (is it useful?), what can we build off of this, what we learned *All*  
-
-## Original Data Source
-
-[Wine Review Dataset](https://www.kaggle.com/zynicide/wine-reviews)- 130k+ wine reviews from WineEnthusiast with variety, location, winery, price, and description
-
 ## ETL Process
 
-1. Our own additional scrapping of the same source: [WineEnthusiast](https://winemag.com/)
-2. Dataset was 180k+, but after cleaning was closer to 170k
+We start with our original dataset that we used for our WorldWineMap [Wine Review Dataset](https://www.kaggle.com/zynicide/wine-reviews), which is made up of 130k+ wine reviews from WineEnthusiast with variety, location, winery, price, description, etc.
+
+We then perform additional scrapping of the same source ([WineEnthusiast](https://winemag.com/)). The resulting dataset is 180k+, but after cleaning it ends up closer to 170k.
 
 ## Sentiment and Text (Description) analysis
 
@@ -75,23 +65,22 @@ Finally, we can find the characteristic terms and the associates of the text:
 
 - New Packages used: [Gensim word2vec model](https://radimrehurek.com/gensim/models/word2vec.html#gensim.models.word2vec.Word2Vec), [Natural language toolkit (NLTK)](https://www.nltk.org/)
 
-1. After getting the data parsed correctly we tested multiple varieties of _min_word_count_, _num_features_ or _window(context_size)_. Decided to go with a mid range of _min_word_count = 5_, _num_features = 100_ and _window(context_size) = 10_ for less noise.
+After getting the data parsed correctly we can test multiple varieties of _min_word_count_, _num_features_ or _window(context_size)_. Decided to go with a mid range of _min_word_count = 5_, _num_features = 100_ and _window(context_size) = 10_ for less noise.
 
-2. Word2Vec has a "most similar" predicting function that will provide words that are similar to what you search.
-
-3. Some examples:
-   <p align="center">
-     <img width="400" src="images/most_similar_full.png" alt="nb variety results"><br>
-   </p>
-   <p align="center">
-     <img width="400" src="images/most_similar_melon.png" alt="nb variety results"><br>
-   </p>
-   <p align="center">
-     <img width="400" src="images/most_similar_oak.png" alt="nb variety results"><br>
-   </p>
-   <p align="center">
-     <img width="400" src="images/most_similar_tannins.png" alt="nb variety results"><br>
-   </p>
+Word2Vec has a "most similar" predicting function that will provide words that are similar to what you search.
+Some examples:
+<p align="center">
+  <img width="400" src="images/most_similar_full.png" alt="nb variety results"><br>
+</p>
+<p align="center">
+  <img width="400" src="images/most_similar_melon.png" alt="nb variety results"><br>
+</p>
+<p align="center">
+ <img width="400" src="images/most_similar_oak.png" alt="nb variety results"><br>
+</p>
+<p align="center">
+ <img width="400" src="images/most_similar_tannins.png" alt="nb variety results"><br>
+</p>
 
 ## ML Models
 ### Preprocessing
