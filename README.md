@@ -34,11 +34,11 @@ Conclusion- what we found (is it useful?), what can we build off of this, what w
 
 ## ML Models
 ### Preprocessing
-
+---
 Since we are dealing with a string of text as the explanatory variable, our model pipeline cleans the strings, removes stop words and creates a matrix of token counts using CountVectorizer. That matrix is then transformed to a TF-IDF matrix (TfidfTransformer), which gives different weights to the tokens rather than just a pure count. It is then this TF-IDF matrix that is used in the various regression and classification models below to predict the dependent variables.
 
 ### Regression Analysis - Price
-
+---
 Our first variable to test is price, as that was the original goal of our project. To keep it simple, we first utilize a simple linear regression (just one explanatory variable) at the end of our model pipeline. The results below, while disappointing, are very informative in telling us that this may not be the most useful relationship to explore:
 <p align="center"><strong>Simple Linear Regression Model - Price</strong><br>
   Accuracy: 0.08765114373376037<br>
@@ -56,7 +56,7 @@ Just to check for any improvement, we try using the Linear SVR model, which will
 Looking at these results of the price models, price does not seem to be accurately predicted by the wine's description. As with many things in life, the cost of something does not always equate to it's qualitative attributes so it makes sense that the description itself does not reveal details of the wine's price.
 
 ### Regression Analysis - Points
-
+---
 Instead of giving up on our regression analysis, we turn to the points variable. This is essentially a 100-point scale rating that the reviewer gives the wine. Using the same exact models as we did for price, we can see a dramatic difference in the model accuracy:
 <p align="center"><strong>Simple Linear Regression Model - Points</strong><br>
   Accuracy: 0.7121472485887046<br>
@@ -71,7 +71,7 @@ Instead of giving up on our regression analysis, we turn to the points variable.
 These results tell us that the wine description can potentially give us useful predictions on the rating that the reviewer gives it. Taking a step back this can be reasonably explained, as the general sentiment (i.e. the reviewer's enthusiasm for the wine) within the description ought to relate to what rating the wine receives. 
 
 ### Classification Analysis - Varietal
-
+---
 Turning to the classification models, variety seems a likely choice as one would expect wines of a certain type to have similar flavor profiles even when considering other factors like price or region. It is important to note that there are a wide range of varieties within the data set but their respective sample sizes are not balanced, which is taken into consideration by limiting the data to the top 20 varietals and also with imblearn's under sampling method, NearMiss.
 <p align="center">
   <strong>Variety Counts</strong>
@@ -99,7 +99,7 @@ The final model utilizes the linear SCV method, which operates similarly to the 
 The variety model results above can lead us to conclude that there may be some predictive power of description on variety but it is not a perfect predictor. The imbalance of the dataset may have a strong role in affecting this predictive power but that is an issue that can only be properly solved with better data. It is interesting to note the various scores of the varietals, as one can see that some are much more easily predicted than others. This can mean that some wine types are very specific in their flavor profiles while some can vary in taste widely, perhaps due to the grapes themselves or other factors like the number of different growing regions for each grape.
 
 ### Classification Analysis - Country
-
+---
 44 countries are represented in the dataset of 171,059 reviews but as seen below the data is very imbalanced:
 <p align="center">
   <strong>Review Counts By Country</strong><br>
@@ -143,13 +143,11 @@ Then....Fit, Predict:
   <strong>TF-IDF SVC Model</strong><br>
   <img width="600" src="images/3_smote_tf-idf_linear_svc.png" alt="SMOTE TF-IDF SVC Image">
 </p>
-
-CONCLUSION:  
+  
 By using the TF-IDF LINEAR SVC Model and oversampling from our Top 10 most common countries, we are able to better predict country from the wine review description.  
 
 By developing an application with a front-end choice, where a user could pick a geographic region or continent desired, we could definitely predict and recommend a wine for them that meets their selected criteria of geography, with price and variety as possible filters.
     
-ADDENDA:
 <p align="center"><strong>OTHER MODELS REVIEWED (scores are the normal Pipeline):</strong><br>
   Categorical Bigram Naive Bayes (Accuracy: 0.7947503799836315)<br>
   Word Count Logistic Regression (Accuracy: 0.8462527768034608)<br>
