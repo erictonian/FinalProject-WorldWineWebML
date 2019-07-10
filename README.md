@@ -106,12 +106,14 @@ The variety model results above can lead us to conclude that there may be some p
   <img width="600" src="images/4_country_counts.png" alt="Country Review Counts">
 </p>
 This imbalance will dramatically affect the learning portion of the model, and thus the prediction results will bias the countries with more reviews. Therefore, there is a need to balance the data to improve the accuracy of the models. imblearn has several strategies to address this imbalance:
-1. Undersampling with NearMiss: reduces the number of samples in the high frequency classes
-2. Oversampling with SMOTE (Synthetic Minority Oversampling Technique): smartly generates samples for the under-represented classes, without simple duplication of existing data
+<ul>
+  <li>Undersampling with NearMiss -- reduces the number of samples in the high frequency classes</li>
+  <li>Oversampling with SMOTE (Synthetic Minority Oversampling Technique) -- smartly generates samples for the under-represented classes, without simple duplication of existing data</li>
+</ul>
 
 Looking at the data, and shaping the learning dataset to provide best execution times, we limit the data to the top ten countries for the three models chosen (to expedite processing and review results)
 
-Modeling Results with Sampling Strategies:  
+
 <p align="center"><strong>CATEGORICAL NAIVE BAYES MODEL</strong><br>
   normal Pipeline Score: 0.8501827040194885<br>
   SMOTE Pipeline Score: 0.8228380024360535<br>
@@ -126,7 +128,7 @@ Modeling Results with Sampling Strategies:
   normal Pipeline Score: 0.8983861144945189<br>
   SMOTE Pipeline Score: 0.8786236297198539  <<<------- BEST WITH OVERSAMPLING!<br>
   NearMiss Pipeline Score: 0.55231425091352
-</p>
+</p>  
 
 So, for country determination by description modeling, our best results are from TF-IDF LINEAR SVC Model with Oversampling!
 
