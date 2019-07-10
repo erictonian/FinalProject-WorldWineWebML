@@ -12,7 +12,7 @@ Ryan Frescas, Eric Staveley, Eric Tonian
 
 ## Project Goal
 Our goal is to utilize Natural Language Processing (NLP) for Machine Learning in order to predict a number of dependent variables (price, points, country, varietal) from the description of the wine. In order to do this, we will take the following steps:
-  1) ETL: use a combination of existing data from WineEnthusiast and newly scrapped data to create a large enough dataset to train the model.
+  1) ETL: use a combination of existing data from WineEnthusiast and newly scraped data to create a large enough dataset to train the model.
   2) Textual Analysis: analyze the wine descriptions that will make up our explanatory variable by exploring word counts, performing sentiment analysis, and looking for word associations with word2vec.
   3) Pre-processing and Model selection: prepare data through removal of stop words, tokenization, vectorization, over/under sampling. Then choose variety of models for each of our dependent variables with best theoretical fit, train, test, compare!
 
@@ -20,7 +20,7 @@ Our goal is to utilize Natural Language Processing (NLP) for Machine Learning in
 
 We start with our original dataset that we used for our WorldWineMap ([Wine Review Dataset](https://www.kaggle.com/zynicide/wine-reviews)), which is made up of 130k+ wine reviews from WineEnthusiast with variety, location, winery, price, description, etc.
 
-We then perform additional scrapping of the same source ([WineEnthusiast](https://winemag.com/)). The resulting dataset is 180k+, but after cleaning it ends up closer to 170k.
+We then perform additional scraping of the same source ([WineEnthusiast](https://winemag.com/)). The resulting dataset is 180k+, but after cleaning it ends up closer to 170k.
 
 ## Sentiment and Text (Description) analysis
 
