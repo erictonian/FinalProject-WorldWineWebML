@@ -24,13 +24,75 @@ Desc. Analysis - Description, Sentiment, word2vec *Ryan*
 ML Models - Price/Points, Variety, Country; how we decided to filter data, what methods did we need to use, why did we pick               this/these models *Eric&Eric*   
 Conclusion- what we found (is it useful?), what can we build off of this, what we learned *All*  
 
-## Data Source
-1) [Wine Review Dataset](https://www.kaggle.com/zynicide/wine-reviews)- 180k+ wine reviews from WineEnthusiast with variety, location, winery, price, and description
-2) Our own additional scrapping of the same source: [WineEnthusiast](https://winemag.com/)
+## Original Data Source
+
+[Wine Review Dataset](https://www.kaggle.com/zynicide/wine-reviews)- 130k+ wine reviews from WineEnthusiast with variety, location, winery, price, and description
 
 ## ETL Process
 
-## Text Analysis
+1. Our own additional scrapping of the same source: [WineEnthusiast](https://winemag.com/)
+2. Dataset was 180k+, but after cleaning was closer to 170k
+
+## Sentiment and Text (Description) analysis
+
+- New Packages used: [TextBlob](https://textblob.readthedocs.io/en/dev/quickstart.html#sentiment-analysis), [ScatterText](https://github.com/JasonKessler/scattertext), [Spacy](https://spacy.io/)
+
+First, we need to get the sentiment score for our description data:
+   <p align="center">
+    <img width="600" src="images/sentiment_score.png" alt="variety counts"><br>
+   </p>
+
+Visualization of our word count for descriptions:
+  <p align="center">
+    <img width="600" src="images/word_count.png" alt="variety counts"><br>
+  </p>
+
+We can then analyze the most common words within our dataset:
+   <p align="center">
+     <strong>Top Unigrams without Stop Words</strong>
+     <img width="600" src="images/unigrams_nostop.png" alt="nb variety results"><br>
+   </p>
+   <p align="center">
+     <strong>Top Bigrams without Stop Words</strong>
+     <img width="600" src="images/top_bigrams_nostop.png" alt="nb variety results"><br>
+   </p>
+   <p align="center">
+     <strong>Top Trigrams without Stop Words</strong>
+     <img width="600" src="images/top_trigrams_nostop.png" alt="nb variety results"><br>
+   </p>
+
+Finally, we can find the characteristic terms and the associates of the text:
+   <p align="center">
+     <strong>Top 20 words that differentiate between a general English corpus</strong>
+     <img src="images/english_corpus.png" alt="nb variety results"><br>
+   </p>
+   <p align="center">
+     <strong>Top 15 words for any US or France Wine (for example)</strong>
+     <br>
+     <img img width="200" src="images/us_france_top_words.png" alt="nb variety results"><br>
+   </p>
+
+## Word2Vec
+
+- New Packages used: [Gensim word2vec model](https://radimrehurek.com/gensim/models/word2vec.html#gensim.models.word2vec.Word2Vec), [Natural language toolkit (NLTK)](https://www.nltk.org/)
+
+1. After getting the data parsed correctly we tested multiple varieties of _min_word_count_, _num_features_ or _window(context_size)_. Decided to go with a mid range of _min_word_count = 5_, _num_features = 100_ and _window(context_size) = 10_ for less noise.
+
+2. Word2Vec has a "most similar" predicting function that will provide words that are similar to what you search.
+
+3. Some examples:
+   <p align="center">
+     <img src="images/most_similar_full.png" alt="nb variety results"><br>
+   </p>
+   <p align="center">
+     <img src="images/most_similar_melon.png" alt="nb variety results"><br>
+   </p>
+   <p align="center">
+     <img src="images/most_similar_oak.png" alt="nb variety results"><br>
+   </p>
+   <p align="center">
+     <img src="images/most_similar_tannins.png" alt="nb variety results"><br>
+   </p>
 
 ## ML Models
 ### Preprocessing
