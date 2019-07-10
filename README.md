@@ -1,4 +1,3 @@
-
 # FinalProject-WorldWineWebML
 UTA Data Bootcamp Final Project - Machine Learning (with Wine!)
 
@@ -134,7 +133,7 @@ The first model is a simple NB model with a matrix of count-vectorized descripti
   <img width="600" src="images/nb_variety.png" alt="nb variety results"><br>
 </p>
 
-The next model takes into account not only the count of the tokens but also their varying weights using the TF-IDF transformer and by using the logisic method, which is better suited to larger data sets. The results show a strong improvement over the NB model, as seen below:
+The next model takes into account not only the count of the tokens but also their varying weights using the TF-IDF transformer and by using the logistic method, which is better suited to larger data sets. The results show a strong improvement over the NB model, as seen below:
 <p align="center">
   <strong>TF-IDF Logistic Classification Model - Variety</strong>
   <img width="600" src="images/tfidf_log_variety.png" alt="tfidf log variety results"><br>
