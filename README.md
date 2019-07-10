@@ -74,8 +74,8 @@ These results tell us that the wine description can potentially give us useful p
 ---
 Turning to the classification models, variety seems a likely choice as one would expect wines of a certain type to have similar flavor profiles even when considering other factors like price or region. It is important to note that there are a wide range of varieties within the data set but their respective sample sizes are not balanced, which is taken into consideration by limiting the data to the top 20 varietals and also with imblearn's under sampling method, NearMiss.
 <p align="center">
-  <strong>Variety Counts</strong>
-  <img src="images/variety_counts.png" alt="variety counts"><br>
+  <strong>Variety Counts</strong><br>
+  <img src="images/variety_counts.png" alt="variety counts">
 </p>
 
 The first model is a simple NB model with a matrix of count-vectorized description tokens and the top 20 varietals, which shows that there is some predictive power of the description on variety, with some varieties performing much better than others (ex. Grüner Veltliner vs. Merlot):
